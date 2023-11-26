@@ -1,89 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <title>HTMLの基本</title>
     <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1, h2 { color: navy; }
-        p { color: #333; }
-        ul, ol { margin-left: 20px; }
-        img { margin-top: 10px; }
-    </style>
+    <title>Viola</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('header-video');
+            video.addEventListener('ended', function() {
+                // ビデオが終了したら再生を停止
+                video.pause();
+            });
+        });
+    </script>
 </head>
 <body>
-    <h1>HTMLとは?</h1>
-    <p>HTML（HyperText Markup Language）は、ウェブページを作成するための標準的なマークアップ言語です。ウェブページの構造を定義し、テキスト、画像、リンクなどのコンテンツをブラウザに表示させる役割を担います。</p>
+    <header>
+        <video autoplay muted id="header-video">
+            <source src="image/hpheader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-content">
+            <h1></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="Supporter.html">Supporter</a></li>
+                    <li><a href="Team.html">Team</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="about">
+            <h2>クランについて</h2>
+            <p>私たちは千葉県を拠点として活動するeスポーツチームです。</p>
+        </section>
 
-    <h2>基本的なHTMLページの構造</h2>
-    <p>1. <strong>DOCTYPE宣言</strong>: <code>&lt;!DOCTYPE html&gt;</code> これは文書がHTMLで書かれていることをブラウザに伝えます。</p>
-    <p>2. <strong>htmlタグ</strong>: <code>&lt;html&gt;</code> すべてのHTML要素はこのタグの内部に配置されます。</p>
-    <p>3. <strong>headセクション</strong>: <code>&lt;head&gt;</code> タイトルやスタイルシートへのリンクなど、文書に関するメタ情報が含まれます。</p>
-    <p>&nbsp;&nbsp;&nbsp;• <strong>titleタグ</strong>: <code>&lt;title&gt;</code> タブのタイトルを設定します。</p>
-    <p>4. <strong>bodyセクション</strong>: <code>&lt;body&gt;</code> ページに表示されるコンテンツ（テキスト、画像、リンクなど）を含みます。</p>
+        <section class="news">
+            <h2>最新ニュース</h2>
+            <!-- ニュース項目を追加 -->
+            <article>
+                <h3>ニュースタイトル1</h3>
+                <p>ニュース内容1</p>
+            </article>
+            <!-- 他のニュース項目を追加可能 -->
+        </section>
+    </main>
 
-    <h2>基本的なHTMLテンプレート例</h2>
-    <p>以下はHTMLの基本的なテンプレートです：</p>
-    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;あなたのページのタイトル&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;見出し1&lt;/h1&gt;
-        &lt;p&gt;ここにテキストが入ります。&lt;/p&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-    </pre>
-
-    <h2>次のStep～HTMLタグの探索～</h2>
-    <h3>１．見出しタグ:</h3>
-    <p>• HTMLでは、<code>&lt;h1&gt;</code> から <code>&lt;h6&gt;</code> までのタグで見出しを作成します。<code>&lt;h1&gt;</code> が最も大きく、<code>&lt;h6&gt;</code> が最も小さい見出しです。</p>
-    <h3>２．異なる種類のテキストスタイル:</h3>
-    <p>• <strong>タグ</strong>でテキストを太字に、<em>タグ</em>でテキストをイタリック（強調）にします。</p>
-    <h3>３．画像の挿入と調整:</h3>
-    <p>• <code>&lt;img&gt;</code> タグで画像を挿入し、width と height 属性でサイズを調整できます。</p>
-    <h3>４．順序なしリスト (<code>&lt;ul&gt;</code>):</h3>
-    <p>• リスト項目は点や丸で始まります。</p>
-    <h3>５. 順序付きリスト (<code>&lt;ol&gt;</code>):</h3>
-    <p>• リスト項目は数字で始まります。</p>
-
-    <h2>これらのタグを使って実際に自己紹介文を作成してみましょう。</h2>
-    <p>例文👇</p>
-    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;自己紹介 &lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;こんにちは！私の名前は山田太郎です。&lt;/h1&gt;
-
-    &lt;p&gt;これは &lt;strong&gt;自己紹介&lt;/strong&gt; のページです。&lt;/p&gt;
-
-    &lt;h2&gt;趣味&lt;/h2&gt;
-    &lt;p&gt;私の趣味について少し紹介します：&lt;/p&gt;
-    &lt;ul&gt;
-        &lt;li&gt;読書&lt;/li&gt;
-        &lt;li&gt;映画鑑賞&lt;/li&gt;
-        &lt;li&gt;旅行&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;h2&gt;好きな食べ物&lt;/h2&gt;
-    &lt;p&gt;私の好きな食べ物は以下の通りです：&lt;/p&gt;
-    &lt;ol&gt;
-        &lt;li&gt;寿司&lt;/li&gt;
-        &lt;li&gt;ラーメン&lt;/li&gt;
-        &lt;li&gt;カレーライス&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;h2&gt;私の写真&lt;/h2&gt;
-    &lt;img src="myphoto.jpg" alt="山田太郎の写真" width="300" height="300"&gt;
-
-    &lt;p&gt;&lt;em&gt;このページを見てくれてありがとう！&lt;/em&gt;&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-    </pre>
+    <footer>
+        <p>&copy; 2023 Viola Esports Team</p>
+    </footer>
 </body>
 </html>
